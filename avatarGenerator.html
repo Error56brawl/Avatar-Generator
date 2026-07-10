@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Avatar Generator</title>
+    <link rel="stylesheet" href="../css/styleAvatarGenerator.css">
+</head>
+<body>
+
+    <div class="generator-container">
+        <div class="avatar-preview">
+            <div id="layer-bg" class="avatar-layer"></div>
+            <div id="layer-body" class="avatar-layer"></div>
+            <div id="layer-face" class="avatar-layer"></div>
+            <div id="layer-accessories" class="avatar-layer"></div>
+        </div>
+
+        <div class="controls">
+            <h2>Customize Avatar</h2>
+            
+            <div class="control-group">
+                <label>Background Color:</label>
+                <button onclick="changeFeature('bg', 0)">Soft Blue</button>
+                <button onclick="changeFeature('bg', 1)">Soft Sunset</button>
+                <button onclick="changeFeature('bg' ,2)">Light Green</button>
+                <button onclick="changeFeature('bg' ,3)">Cyber Yellow</button>
+                <button onclick="changeFeature('bg' ,4)">Electric Violet</button>
+                <button onclick="changeFeature('bg' ,5)">Bright Orange</button>
+                <button onclick="changeFeature('bg' ,6)">Neon Turquoise</button>
+            </div>
+
+            <div class="control-group">
+                <label>Body Shape:</label>
+                <button onclick="changeFeature('body', 0)">Circle Body</button>
+                <button onclick="changeFeature('body', 1)">Square Body</button>
+            </div>
+
+            <div class="control-group">
+                <label>Body Color:</label>
+                <button onclick="changeBodyColor('#ffcdb2')">Peach</button>
+                <button onclick="changeBodyColor('#e07a5f')">Clay Tan</button>
+                <button onclick="changeBodyColor('#ffb7a1')">Deep Peach</button>
+                <button onclick="changeBodyColor('#3d5a80')">Avatar Blue</button>
+                <button onclick="changeBodyColor('#ffdbac')">Pale Ivory</button>
+                <button onclick="changeBodyColor('#ffdbac')">Pale Ivory</button>
+                <button onclick="changeBodyColor('#f1c27d')">Warm Sand</button>
+                <button onclick="changeBodyColor('#e0a96d')">Golden Tan</button>
+                <button onclick="changeBodyColor('#8d5524')">Rich Bronze</button>
+                <button onclick="changeBodyColor('#4a2c11')">Deep Espresso</button>
+                <button onclick="changeBodyColor('#ffccd5')">Bubblegum Pink</button>
+                <button onclick="changeBodyColor('#dfccf1')">Pastel Lavender</button>
+                <button onclick="changeBodyColor('#cce3de')">Matcha Green</button>
+                <button onclick="changeBodyColor('#cbd5e1')">Slate Robot Gray</button>
+                <button onclick="changeBodyColor('#a7f3d0')">Mint Alien Green</button>
+
+            </div>
+
+            <div class="control-group">
+                <label>Face Expression:</label>
+                <button onclick="changeFeature('face', 0)">Happy</button>
+                <button onclick="changeFeature('face', 1)">Surprised</button>
+                <button onclick="changeFeature('face', 2)">Sad</button>
+                <button onclick="changeFeature('face' , 3)">Angry</button>
+                <button onclick="changeFeature('face' ,4)">Neutral</button>
+                <button onclick="changeFeature('face' ,5)">Lazy</button>
+                <button onclick="changeFeature('face' ,6)">Tired</button>
+                <button onclick="changeFeature('face' ,7)">Nervous</button>
+                <button onclick="changeFeature('face' ,8)">Naughty</button>
+                <button onclick="changeFeature('face' ,9)">Bored</button>
+                <button onclick="changeFeature('face' ,10)">Shocked</button>
+                <button onclick="changeFeature('face' ,11)">Dizzy</button>
+                <button onclick="changeFeature('face' ,12)">Evil</button>
+                <button onclick="changeFeature('face' ,13)">Blush</button>
+                <button onclick="changeFeature('face' ,14)">Determined</button>
+            </div>
+
+            <div class="control-group">
+                <label>Accessories:</label>
+                <button onclick="changeFeature('accessories' , 0)">None</button>
+                <button onclick="changeFeature('accessories' , 1)">Glasses</button>
+                <button onclick="changeFeature('accessories' , 2)">Sun Glasses</button>
+                <button onclick="changeFeature('accessories' , 3)">Hat</button>
+                <button onclick="changeFeature('accessories' , 4)">Headset</button>
+                <button onclick="changeFeature('accessories' , 5)">Cat Ears</button>
+                <button onclick="changeFeature('accessories' , 6)">Sun Glasses</button>
+                <button onclick="changeFeature('accessories' , 7)">Face Mask</button>
+                <button onclick="changeFeature('accessories' , 8)">Monocle</button>
+                <button onclick="changeFeature('accessories' , 9)">Crown</button>
+                <button onclick="changeFeature('accessories' , 10)">Bow Tie</button>
+                
+
+            </div>
+
+            <div class="control-group">
+                <label>Randomize Avatar</label>
+                <button onclick="randomize()">Random Avatar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/avatargenerator.js"></script>
+</body>
+</html>
