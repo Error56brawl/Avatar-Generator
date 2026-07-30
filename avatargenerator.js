@@ -240,5 +240,33 @@ function changeBodyColor(colorHex) {
     document.documentElement.style.setProperty('--body-color', colorHex);
 }
 
+function downloadAvatarSVG() {
+    // 1. Get current body color from CSS variable
+    const currentColor = getComputedStyle(document.documentElement)
+                          .getPropertyValue('--body-color').trim() || '#ffb703';
+    
+    // 2. Combine current active layers into a single SVG string
+    const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="500" height="500">
+        <style>:root { --body-color: ${currentColor}; }</style>
+        ${assets.bg[currentSelections.bg]}
+        ${assets.body[currentSelections.body]}
+        ${assets.face[currentSelections.face]}
+        ${assets.accessories[currentSelections.accessories]}
+    </svg>`;
+
+    // 3. Create a Blob and temporary download link
+    const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    
+    link.href = url;
+    link.download = `avatar-${Date.now()}.svg`; // Saves with a unique filename
+    
+    // 4. Trigger download and clean up
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 // Initial draw on load
 renderAvatar();
